@@ -78,4 +78,4 @@ parts:
       fi
       snapcraftctl set-version $VER
     build-packages:
-      - libssl-dev:arm64
+      - libssl-dev
