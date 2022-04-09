@@ -78,7 +78,8 @@ parts:
       fi
       snapcraftctl set-version $VER
     build-packages:
-      - build-essential
-      - pkg-config
-      - libssl-dev
-      - gcc
+      - on amd64:
+        - to arm64:
+          - libssl-dev:arm64
+        - to amd64:
+          - libsddl-dev
