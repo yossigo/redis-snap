@@ -64,8 +64,8 @@ parts:
     source: redis/
     override-build: |
       mkdir -p ${SNAPCRAFT_PART_INSTALL}/usr
-      CC=${SNAPCRAFT_ARCH_TRIPLET}-gcc
-      DEB_HOST_GNU_TYPE=${SNAPCRAFT_ARCH_TRIPLET}
+      export CC=${SNAPCRAFT_ARCH_TRIPLET}-gcc
+      export DEB_HOST_GNU_TYPE=${SNAPCRAFT_ARCH_TRIPLET}
       make -j4 BUILD_TLS=yes
       PREFIX=${SNAPCRAFT_PART_INSTALL}/usr make BUILD_TLS=yes install
       VER=`sed -n 's/^.* REDIS_VERSION "\(.*\)"$/\1/g p' < src/version.h`
