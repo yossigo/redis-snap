@@ -34,5 +34,6 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: archive-snap-artifacts
-        path: *.snap
+        path: |
+          *.snap
 
