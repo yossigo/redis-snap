@@ -78,7 +78,4 @@ parts:
       fi
       snapcraftctl set-version $VER
     build-packages:
-      - build-essential
-      - pkg-config
       - libssl-dev:arm64
-      - gcc
