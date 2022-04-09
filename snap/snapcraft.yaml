@@ -82,4 +82,4 @@ parts:
         - to arm64:
           - libssl-dev:arm64
         - to amd64:
-          - libsddl-dev
+          - libssl-dev
