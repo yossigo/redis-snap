@@ -15,6 +15,6 @@ jobs:
     - name: Setup Snapcraft
       run: |
           sudo snap install snapcraft --classic
-          snapcraft build --target-arch arm64
+          snapcraft build --target-arch arm64 --enable-experimental-target-arch
       env:
         SNAPCRAFT_BUILD_ENVIRONMENT: host
