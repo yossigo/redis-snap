@@ -80,5 +80,5 @@ parts:
     build-packages:
       - build-essential
       - pkg-config
-      - libssl-dev
+      - libssl-dev:aarch64
       - gcc
