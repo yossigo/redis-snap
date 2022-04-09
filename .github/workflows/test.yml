@@ -21,9 +21,12 @@ jobs:
           deb [arch=arm64] http://ports.ubuntu.com $(lsb_release -cs)-updates main universe
           _END_
     - name: Setup Snapcraft
-      run: |
-          sudo snap install snapcraft --classic
-          snapcraft --target-arch amd64
-          snapcraft --target-arch arm64 --destructive-mode --enable-experimental-target-arch
+      run: sudo snap install snapcraft --classic
+    - name: Build amd64
       env:
         SNAPCRAFT_BUILD_ENVIRONMENT: host
+      run: snapcraft
+    - name: Build arm64
+      env:
+        SNAPCRAFT_BUILD_ENVIRONMENT: host
+      run: snapcraft --target-arch arm64 --destructive-mode --enable-experimental-target-arch
