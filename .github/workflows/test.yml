@@ -16,8 +16,8 @@ jobs:
       run: |
           sudo dpkg --add-architecture aarch64
           cat <<_END_ | sudo tee /etc/apt/sources.list.d/crosscompile.list
-          deb [arch=arm64] http://ports.ubuntu.com $(lsb_release -c) main universe
-          deb [arch=arm64] http://ports.ubuntu.com $(lsb_release -c)-updates main universe
+          deb [arch=arm64] http://ports.ubuntu.com $(lsb_release -cs) main universe
+          deb [arch=arm64] http://ports.ubuntu.com $(lsb_release -cs)-updates main universe
           _END_
     - name: Setup Snapcraft
       run: |
