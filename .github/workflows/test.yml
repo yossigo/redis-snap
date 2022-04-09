@@ -14,6 +14,7 @@ jobs:
         path: redis
     - name: Prepare for cross-compilation
       run: |
+          sudo apt-get remove libssl-dev
           sudo dpkg --add-architecture aarch64
           cat <<_END_ | sudo tee /etc/apt/sources.list.d/crosscompile.list
           deb [arch=arm64] http://ports.ubuntu.com $(lsb_release -cs) main universe
