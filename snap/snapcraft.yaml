@@ -13,7 +13,7 @@ confinement: strict # use 'strict' once you have the right plugs and slots
 base: core20
 architectures:
   - build-on: amd64
-    run-on: arm64
+    run-on: [amd64, arm64]
 
 apps:
   server:
@@ -78,4 +78,7 @@ parts:
       fi
       snapcraftctl set-version $VER
     build-packages:
-      - libssl-dev:arm64
+      - build-essential
+      - pkg-config
+      - libssl-dev
+      - gcc
