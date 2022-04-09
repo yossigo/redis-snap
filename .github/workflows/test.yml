@@ -1,0 +1,20 @@
+name: Test-Arm64
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+      with:
+        repository: redis/redis
+        path: redis
+    - name: Setup Snapcraft
+      run: |
+          sudo snap install snapcraft --classic
+          snapcraft build --target-arch arm64
+      env:
+        SNAPCRAFT_BUILD_ENVIRONMENT: host
