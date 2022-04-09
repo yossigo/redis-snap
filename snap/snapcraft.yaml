@@ -11,6 +11,9 @@ description: |
 grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: strict # use 'strict' once you have the right plugs and slots
 base: core20
+architectures:
+  - build-on: amd64
+    run-on: arm64
 
 apps:
   server:
