@@ -30,3 +30,9 @@ jobs:
       env:
         SNAPCRAFT_BUILD_ENVIRONMENT: host
       run: snapcraft --target-arch arm64 --destructive-mode --enable-experimental-target-arch
+    - name: Archive artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: snap
+        path: *.snap
+
