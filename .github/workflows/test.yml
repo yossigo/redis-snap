@@ -15,6 +15,10 @@ jobs:
     - name: Setup Snapcraft
       run: |
           sudo dpkg --add-architecture aarch64
+          cat <<_END_ | sudo tee /etc/apt/sources.list.d/crosscompile.list
+deb [arch=arm64] http://ports.ubuntu.com $(lsb_release -c) main universe
+deb [arch=arm64] http://ports.ubuntu.com $(lsb_release -c)-updates main universe
+_END_
           sudo snap install snapcraft --classic
           snapcraft build --target-arch arm64 --enable-experimental-target-arch
       env:
